@@ -2,7 +2,7 @@ public class Dog extends Animals {
     private String name;
     final int runLimit = 500;
     final int swimLimit = 10;
-    private int dogsCount;
+    private static int dogsCount;
 
     Dog(String name) {
         this.name = name;

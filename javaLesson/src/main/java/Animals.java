@@ -1,5 +1,5 @@
 public class Animals {
-    protected int animalsCount;
+    protected static int animalsCount;
     protected void run(int obstacle, int runLimit){
         if (obstacle<=runLimit){
         System.out.println("Пробежал " +obstacle+"метра");

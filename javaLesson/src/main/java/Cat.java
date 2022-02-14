@@ -6,7 +6,7 @@ public class Cat extends Animals {
     private boolean isFull;
     final int runLimit = 500;
     final int swimLimit = 0;
-    private int catsCount;
+    private static int catsCount;
 
     Cat(String name, int appetite) {
         this.name = name;
