@@ -25,6 +25,8 @@ public class Plate {
     }
 
     void increaseFood(int amount) {
+        if (amount>0){
         amountOfFood += amount;
+        } else System.out.println("Amount should be positive");
     }
 }

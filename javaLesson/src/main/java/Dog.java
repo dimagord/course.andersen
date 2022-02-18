@@ -1,13 +1,20 @@
 public class Dog extends Animals {
-    private String name;
-    final int runLimit = 500;
-    final int swimLimit = 10;
+    final private int runLimit = 500;
+    final private int swimLimit = 10;
     private static int dogsCount;
 
     Dog(String name) {
-        this.name = name;
+        super.name = name;
+        super.swimLimit=this.swimLimit;
+        super.runLimit=this.runLimit;
         dogsCount++;
         animalsCount++;
+    }
+    int getRunLimit(){
+        return runLimit;
+    }
+    int getSwimLimit(){
+        return swimLimit;
     }
     void getDogsCount(){
         System.out.println(dogsCount);

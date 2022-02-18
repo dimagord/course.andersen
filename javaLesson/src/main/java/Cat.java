@@ -1,20 +1,22 @@
 
 
 public class Cat extends Animals {
-    private String name;
-    private int appetite;
+    private final int appetite;
     private boolean isFull;
-    final int runLimit = 500;
-    final int swimLimit = 0;
+    final private int runLimit = 500;
+    final private int swimLimit = 0;
     private static int catsCount;
 
     Cat(String name, int appetite) {
-        this.name = name;
+        super.name = name;
+        super.swimLimit=this.swimLimit;
+        super.runLimit=this.runLimit;
         this.appetite = appetite;
         this.isFull = false;
         catsCount++;
         animalsCount++;
     }
+
     void getCatsCount(){
         System.out.println(catsCount);
     }
