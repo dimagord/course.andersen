@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,6 +36,13 @@ public class Main {
 
         System.out.println(orangeBox.getItems());
         System.out.println(appleBox.getItems());
+        String[] ar = new String[2];
+        ar[0]="1";
+        ar[1]="2";
+        System.out.println(Arrays.toString(ar));
+        Task1 task1 = new Task1();
+        task1.elementsSwap(ar,0,1);
+        System.out.println(Arrays.toString(ar));
 
 
 
