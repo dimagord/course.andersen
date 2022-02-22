@@ -5,16 +5,16 @@ public class Box<T extends Fruit> {
     private int totalWeight;
     private final ArrayList<T> fruitList = new ArrayList<>();
 
-    public Box(T... objs){
+    public Box(T... objs) throws Exception {
         if (objs.length>1){
             for(T obj:objs){
-                assert objs[0].getClass().getName().equals(obj.getClass().getName());
+                if(!objs[0].getClass().getName().equals(obj.getClass().getName())){
+                    throw new Exception("Different types of fruit");
+                }
             }
         }
         fruitList.addAll(Arrays.asList(objs));
     }
-
-
 
     public void showItems() {
         for (T fruit:fruitList){

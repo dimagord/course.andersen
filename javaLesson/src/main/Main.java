@@ -3,14 +3,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Apple apple1 = new Apple();
         Apple apple2 = new Apple();
         Apple apple3 = new Apple();
         Orange orange = new Orange();
-        Box appleBox = new Box(apple1,apple3);
+        Box appleBox = new Box(apple1,apple2,apple3);
         Box sameAppleBox = new Box(apple1,apple3);
         System.out.println(appleBox.getWeight());
+        appleBox.showItems();
         System.out.println(appleBox.compare(sameAppleBox));
         appleBox.addFruits(orange);
         System.out.println(appleBox.getWeight());
