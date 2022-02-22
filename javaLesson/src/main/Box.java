@@ -1,30 +1,33 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Box {
+public class Box<T extends Fruit> {
     private int totalWeight;
-    private final ArrayList<Fruit> fruitList = new ArrayList<>();
+    private final ArrayList<T> fruitList = new ArrayList<>();
 
-    public Box(Apple... objs){
+    public Box(T... objs){
+        if (objs.length>1){
+            for(T obj:objs){
+                assert objs[0].getClass().getName().equals(obj.getClass().getName());
+            }
+        }
         fruitList.addAll(Arrays.asList(objs));
     }
-    public Box(Orange... objs){
-        fruitList.addAll(Arrays.asList(objs));
-    }
+
 
 
     public void showItems() {
-        for (Fruit fruit:fruitList){
+        for (T fruit:fruitList){
         System.out.println("Тип T: " + fruit.getClass().getName());}
     }
     public int getWeight(){
         totalWeight=0;
-        for (Fruit fruit:fruitList){
+        for (T fruit:fruitList){
             totalWeight+=fruit.weight;
         } return totalWeight;
     }
-    public void addFruits(Fruit... addedFruit){
-        for (Fruit fruit:addedFruit){
+    public void addFruits(T... addedFruit){
+        for (T fruit:addedFruit){
         if (fruit.getClass().getName().equals(fruitList.get(0).getClass().getName())){
         fruitList.add(fruit);
         } else
@@ -48,7 +51,7 @@ public class Box {
         return fruitList.size();
     }
 
-    public ArrayList<Fruit> getItems(){
+    public ArrayList<T> getItems(){
         return fruitList;
     }
 
